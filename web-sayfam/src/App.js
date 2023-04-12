@@ -19,7 +19,7 @@ import './App.css';
 function App() {
 
   const [language, setLanguage] = useState(localStorage.getItem("language") ==="english" ? "english": "türkçe");
-  const [mode, setMode] = useState(localStorage.getItem("mode")==="light" ? "dark" : "light");
+  const [mode, setMode] = useState(localStorage.getItem("mode")==="light" ? "light" : "dark");
 
 
 
