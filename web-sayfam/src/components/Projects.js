@@ -13,7 +13,7 @@ export default function Projects(props) {
 
     
     return (
-        <section id={mode} className='w-11/12 h-[600px] content-center flex-wrap gap-20 mt-16 mb-10'>
+        <section id={mode} ref={props.scrollToRefProjects} className='w-11/12 h-[600px] content-center flex-wrap gap-20 mt-16 mb-10'>
             <p id="projects" className="ml-32 mt-8 text-5xl not-italic font-semibold dark:text-[#AEBCCF]">{language === "türkçe" ? "Projeleri" : "Projects" }</p>
             <div className=" flex flex-row">
                 {(language === "türkçe" ? dataProjectsTr : dataProjects).map((project, index) => (

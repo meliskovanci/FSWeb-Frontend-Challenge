@@ -3,14 +3,14 @@ import { LanguageContext } from "../contexts/LanguageContext";
 import { ModeContext } from "../contexts/ModeContext";
 import ok from "../images/ok.png"
 
-export default function Footer() {
+export default function Footer(props) {
 
     const { language } = useContext(LanguageContext);
     const { mode } = useContext(ModeContext);
 
     return (
         <div id={mode} className=" bg-[#F9F9F9]  dark:bg-[#141414] ">
-            <section id="hire-me" className="flex flex-col ml-32 w-11/12 pt-32 h-[409px]">
+            <section id="hire-me" ref={props.scrollToRefHireMe} className="flex flex-col ml-32 w-11/12 pt-32 h-[409px]">
 
                 <div className='flex flex-wrap text-5xl not-italic font-semibold w-[500px]'>{language === "türkçe" ? "Bir sonraki projeniz için iletişime geçebilirsiniz" : "Let’s work together on your next product."}</div>
                

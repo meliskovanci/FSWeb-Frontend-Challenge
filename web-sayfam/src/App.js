@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 import { LanguageContext } from "./contexts/LanguageContext";
 import { ModeContext } from "./contexts/ModeContext";
-
+import { useRef } from 'react';
 
 
 
@@ -21,15 +21,6 @@ function App() {
   const [language, setLanguage] = useState(localStorage.getItem("language") ==="english" ? "english": "türkçe");
   const [mode, setMode] = useState(localStorage.getItem("mode")==="light" ? "dark" : "light");
 
-  //const [mode,setMode]=useState(false)
-
-  // useEffect(() => {
-  //   if (!window.localStorage.getItem("mode")) {
-  //     window.localStorage.setItem("mode", "light");
-  //   } else if (window.localStorage.getItem("mode") === "dark") {
-  //     setMode(true);
-  //   }
-  // }, []);
 
 
   useEffect(() => {
@@ -78,23 +69,15 @@ function App() {
   
 
 
-  // const scrollToRefSkill = useRef();
+  const scrollToRefSkill = useRef();
 
-  // const handleScrollSkill =  () => {
-  //   scrollToRefSkill.current.scrollIntoView({behavior: 'smooth'})
-  // }
+  const scrollToRefProjects = useRef();
 
-  // const scrollToRefProjects = useRef();
+  const scrollToRefHireMe = useRef();
 
-  // const handleScrollProject =  () => {
-  //   scrollToRefProjects.current.scrollIntoView({behavior: 'smooth'})
-  // }
-
-  // const scrollToRefHireMe = useRef();
-
-  // const handleScrollHireMe =  () => {
-  //   scrollToRefHireMe.current.scrollIntoView({behavior: 'smooth'})
-  // }
+  const handleScroll =  (ref) => {
+    ref.current?.scrollIntoView({behavior: 'smooth'})
+  }
 
 
 
@@ -105,12 +88,12 @@ function App() {
       <LanguageContext.Provider value={{ language, handleLanguage }}>
         <div className="bg-[#F5F5F5] dark:bg-[#252128] h-auto" id={mode}>
 
-          <Header />
+          <Header handleScroll={handleScroll} scrollToRefSkill={scrollToRefSkill} scrollToRefProjects={scrollToRefProjects} scrollToRefHireMe={scrollToRefHireMe} />
           <Info />
-          <Skills />
+          <Skills scrollToRefSkill={scrollToRefSkill} />
           <Profile />
-          <Projects />
-          <Footer />
+          <Projects scrollToRefProjects={scrollToRefProjects}/>
+          <Footer scrollToRefHireMe={scrollToRefHireMe} />
         </div>
       </LanguageContext.Provider>
     </ModeContext.Provider>

@@ -7,14 +7,14 @@ import { skillsData } from "../data/SkillsData";
 import { skillsDataTr } from "../data/SkillsData";
 
 
-export default function PersonalComponent() {
+export default function PersonalComponent(props) {
 
     const { language } = useContext(LanguageContext);
     const { handleMode, mode } = useContext(ModeContext)
 
     return (
 
-        <section id="skills" className="w-11/12 h-[250px] mt-36 ">
+        <section id="skills" ref={props.scrollToRefSkill} className="w-11/12 h-[250px] mt-36 ">
             <div className="">
                 <div id={mode} className="ml-32 mt-8 text-5xl not-italic font-semibold w-1/3 dark:text-[#AEBCCF]">
 

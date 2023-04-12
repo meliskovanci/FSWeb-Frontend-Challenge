@@ -5,7 +5,8 @@ import { ModeContext } from "../contexts/ModeContext";
 import { headerData, headerDataTr } from "../data/InfoData";
 
 
-export default function Header() {
+export default function Header(props) {
+    const { handleScroll } = props;
     
 
     const { handleLanguage, language } = useContext(LanguageContext);
@@ -27,7 +28,10 @@ export default function Header() {
                         ></div>
                         <span className="ml-3 font-bold dark:text-[#D9D9D9]">{mode === "light" ? "dark".toUpperCase() : "light".toUpperCase()} MODE</span>
                         
+                        
                     </label>
+
+                    
                    
                     <hr className="origin-center rotate-90  border-zinc-500 w-4 h-7 text-base " />
 
@@ -39,13 +43,13 @@ export default function Header() {
                     </div>
                     <div className="flex ">
 
-                        <a href="#skills" id={mode}  className="mx-20 mt-3 py-2 text-lg font-medium dark:text-[#6B7280]"> {language === "türkçe" ? headerDataTr.headerSkills : headerData.headerSkills}</a>
+                        {/* <a href="#skills" id={mode}  className="mx-20 mt-3 py-2 text-lg font-medium dark:text-[#6B7280]"> {language === "türkçe" ? headerDataTr.headerSkills : headerData.headerSkills}</a>
                         <a href="#projects" id={mode}  className="mr-10 mt-3 py-2 text-lg font-medium dark:text-[#6B7280]">{language === "türkçe" ? headerDataTr.headerProjects : headerData.headerProjects} </a>
-                        <a href="#hire-me" id="button-hire-me"  className="border-2 text-lg font-medium border-[#3730A3] rounded px-8 py-2  mt-3 dark:text-[#3730A3] dark:bg-[#FFFFFF]">{language === "türkçe" ? headerDataTr.headerHireMe : headerData.headerHireMe}</a>
+                        <a href="#hire-me" id="button-hire-me"  className="border-2 text-lg font-medium border-[#3730A3] rounded px-8 py-2  mt-3 dark:text-[#3730A3] dark:bg-[#FFFFFF]">{language === "türkçe" ? headerDataTr.headerHireMe : headerData.headerHireMe}</a> */}
 
-                        {/* <Link to="/skills" id={mode}  className="mx-20 mt-3 pt-1" >{language === "türkçe" ? headerDataTr.headerSkills : headerData.headerSkills}</Link>
-                        <Link to="/projects" id={mode}  className="mr-10 mt-3 pt-1" >{language === "türkçe" ? headerDataTr.headerProjects : headerData.headerProjects}</Link>
-                        <Link to="/hire-me" id="button-hire-me"  className="border-2 border-[#3730A3] rounded px-6 pt-1 mt-3">{language === "türkçe" ? headerDataTr.headerHireMe : headerData.headerHireMe}</Link> */}
+                        <Link to="/skills" id={mode} onClick={() => handleScroll(props.scrollToRefSkill)} className="mx-20 mt-3 pt-1" >{language === "türkçe" ? headerDataTr.headerSkills : headerData.headerSkills}</Link>
+                        <Link to="/projects" id={mode} onClick={() => handleScroll(props.scrollToRefProjects)} className="mr-10 mt-3 pt-1" >{language === "türkçe" ? headerDataTr.headerProjects : headerData.headerProjects}</Link>
+                        <Link to="/hire-me" id="button-hire-me" onClick={() => handleScroll(props.scrollToRefHireMe)} className="border-2 border-[#3730A3] rounded px-6 pt-1 mt-3">{language === "türkçe" ? headerDataTr.headerHireMe : headerData.headerHireMe}</Link>
                     </div>
                 </div>
             </nav>
