@@ -20,18 +20,18 @@ export default function PersonalComponent(props) {
 
                     <p>{language === "türkçe" ? "Yetenekler" : "Skills"}</p>
                 </div>
-                <div id={mode} className="ml-32 mt-5 flex flex-row mb-14 pb-5">
-                    <div >
-                        <p className="text-[#4338CA] text-3xl mr-32 dark:text-[#BAB2E7]">{skillsData.headerJavaScript}</p>
-                        <div id={mode} className="text-[#6B7280] w-[300px] h-12 mr-80 mt-7 dark:text-[#FFFFFF]">{language === "türkçe" ? skillsDataTr.infoJavaScript : skillsData.infoJavaScript}</div>
+                <div id={mode} className=" mt-5 flex flex-row h-40 mb-14 pb-5">
+                    <div className="ml-32" >
+                        <p className="text-[#4338CA] text-3xl mr-4 dark:text-[#BAB2E7]">{skillsData.headerJavaScript}</p>
+                        <div id={mode} className="text-[#6B7280] w-3/5 h-12 mr-20 mt-7 dark:text-[#FFFFFF]">{language === "türkçe" ? skillsDataTr.infoJavaScript : skillsData.infoJavaScript}</div>
                     </div>
                     <div >
-                        <p className="text-[#4338CA] text-3xl mr-32 dark:text-[#BAB2E7]">{skillsData.headerReactJs}</p>
-                        <div id={mode} className="text-[#6B7280] w-[300px] h-12 mr-80 mt-7 dark:text-[#FFFFFF]">{language === "türkçe" ? skillsDataTr.infoReactJs : skillsData.infoReactJs}</div>
+                        <p className="text-[#4338CA] text-3xl mr-4 dark:text-[#BAB2E7]">{skillsData.headerReactJs}</p>
+                        <div id={mode} className="text-[#6B7280] w-3/5 h-12 mr-20  mt-7 dark:text-[#FFFFFF]">{language === "türkçe" ? skillsDataTr.infoReactJs : skillsData.infoReactJs}</div>
                     </div>
                     <div >
                         <p className="text-[#4338CA] text-3xl dark:text-[#BAB2E7]">{skillsData.headerNodeJs}</p>
-                        <div id={mode} className="text-[#6B7280] w-[300px] h-12 mt-7 dark:text-[#FFFFFF]">{language === "türkçe" ? skillsDataTr.infoNodeJs : skillsData.infoNodeJs}</div>
+                        <div id={mode} className="text-[#6B7280] w-3/5 h-12 mt-7 dark:text-[#FFFFFF]">{language === "türkçe" ? skillsDataTr.infoNodeJs : skillsData.infoNodeJs}</div>
                     </div>
                 </div>
 

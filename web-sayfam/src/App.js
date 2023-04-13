@@ -66,9 +66,6 @@ function App() {
     }
   }
 
-  
-
-
   const scrollToRefSkill = useRef();
 
   const scrollToRefProjects = useRef();
@@ -81,12 +78,10 @@ function App() {
 
 
 
-
-
   return (
     <ModeContext.Provider value={{ mode, handleMode }}>
       <LanguageContext.Provider value={{ language, handleLanguage }}>
-        <div className="bg-[#F5F5F5] dark:bg-[#252128] h-auto" id={mode}>
+        <div className="bg-[#FFFFFF] dark:bg-[#252128] h-auto" id={mode}>
 
           <Header handleScroll={handleScroll} scrollToRefSkill={scrollToRefSkill} scrollToRefProjects={scrollToRefProjects} scrollToRefHireMe={scrollToRefHireMe} />
           <Info />

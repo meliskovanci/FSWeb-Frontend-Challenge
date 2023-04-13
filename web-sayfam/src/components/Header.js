@@ -1,41 +1,58 @@
 import { Link } from "react-router-dom";
-import { useContext} from "react";
+import { useContext } from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
 import { ModeContext } from "../contexts/ModeContext";
 import { headerData, headerDataTr } from "../data/InfoData";
 
+import "./Toggle.css"
+
 
 export default function Header(props) {
     const { handleScroll } = props;
-    
+
 
     const { handleLanguage, language } = useContext(LanguageContext);
     const { handleMode, mode } = useContext(ModeContext);
 
 
     console.log(mode)
-    
+
 
     return (
-        <header id={mode} className="w-11/12 h-[237px] bg-[#F5F5F5] dark:bg-[#252128] ">
+        <header id={mode} className="w-11/12 h-[237px] bg-[#FFFFFF] dark:bg-[#252128] ">
             <nav>
-                <div className=" flex justify-end ">
-
-                    <label className="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" value="" className="sr-only peer" id={mode} onClick={()=>handleMode()} />
-                        <div
-                            className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
-                        ></div>
-                        <span className="ml-3 font-bold dark:text-[#D9D9D9]">{mode === "light" ? "dark".toUpperCase() : "light".toUpperCase()} MODE</span>
-                        
-                        
-                    </label>
-
-                    
+                <div className=" flex  justify-end pt-2 ">
                    
+                    <input type="checkbox" value="check" id="toggle_checkbox" onClick={() => handleMode()} />
+
+                        <label for="toggle_checkbox" value="check">
+                            <div id="star">
+                                <div class="star" id="star-1">★</div>
+                                <div class="star" id="star-2">★</div>
+                            </div>
+                            <div id="moon"></div>
+                             
+                        </label> 
+                        <a id={mode} href="#" className="ml-3 font-bold dark:text-[#D9D9D9]" onClick={() => handleMode()}>{mode === "light" ? "dark".toUpperCase() : "light".toUpperCase()} MODE</a>
+                       
+                        
+                    {/* <label className="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" value="" className="sr-only peer" id={mode} onClick={() => handleMode()} />
+                        <div
+                            className="w-11 h-6 bg-[#4731D3] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#4731D3] dark:peer-focus:ring-[#3A3A3A] rounded-full peer dark:bg-[#3A3A3A] peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#FFE86E] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#3A3A3A]"
+                        >
+
+                        </div>
+                        <span className="ml-3 font-bold dark:text-[#D9D9D9]">{mode === "light" ? "dark".toUpperCase() : "light".toUpperCase()} MODE</span>
+
+
+
+                    </label> */}
+
+
                     <hr className="origin-center rotate-90  border-zinc-500 w-4 h-7 text-base " />
 
-                    <a id={mode} href="#" className="ml-11 text-[#4731D3] font-bold dark:text-[#BAB2E7]" onClick={() => handleLanguage()}>{language === "türkçe" ? "english".toUpperCase() : "türkçe".toUpperCase()}</a> <p className="text-[#777777] ">{language === "türkçe" ? headerData.addition : headerDataTr.addition}</p>
+                    <a id={mode} href="#" className="ml-11 text-[#4731D3] font-bold dark:text-[#BAB2E7]" onClick={() => handleLanguage()}>{language === "türkçe" ? "english".toUpperCase() : "türkçe".toUpperCase()}</a> <p className="text-[#777777] "> {language === "türkçe" ? headerData.addition : headerDataTr.addition}</p>
                 </div>
                 <div className="flex justify-between mt-10">
                     <div className="flex flex-row">
