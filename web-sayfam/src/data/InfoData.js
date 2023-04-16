@@ -9,7 +9,8 @@ export const headerData = {
     infoButtonHireMe: "Hire Me",
     infoButtonGithub: "Github",
     infoButtonLinkedin: "LinkedIn",
-    addition:" PAGE"
+    addition1: "ENGLİSH",
+    addition2: "PAGE" 
     
 }
 
@@ -23,7 +24,8 @@ export const headerDataTr = {
     infoButtonHireMe: "İletişim",
     infoButtonGithub: "Github",
     infoButtonLinkedin: "LinkedIn",
-    addition:"'YE GEÇ"
+    addition1:" TÜRKÇE",
+    addition2:"'YE GEÇ"
     
 };
 

@@ -23,7 +23,7 @@ export default function Footer(props) {
                     </div>
                 
 
-                    <div className="flex justify-end gap-3 mt-16">
+                    <div className="flex justify-end gap-5 mt-16 mr-24">
                         <a id="personalblog" className="text-[#0A0A14] text-lg dark:text-[#E1E1FF]" target="_blank" href="https://www.instagram.com/melis.kovanci">Personal Blog</a>
                         <a id='github' className="text-[#00AB6B] text-lg" target="_blank" href='https://github.com/meliskovanci'>Github</a>
                         <a id='linkedin' className="text-[#0077B5] text-lg" target="_blank" href='https://www.linkedin.com/in/melis-kovanc%C4%B1-79755888/'>LinkedIn</a>

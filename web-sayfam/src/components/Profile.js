@@ -12,7 +12,7 @@ export default function Profile() {
 
     return (
         <section id={mode} className="w-11/12 h-[350px] mt-16">
-            <h2 className=" flex flex-row justify-start ml-32 w-36 h-12 mt-5 text-5xl not-italic font-semibold dark:text-[#AEBCCF]">{language === "türkçe" ? "Hakkinda" : "Profile"}</h2>
+            <h2 className=" flex flex-row justify-start ml-32 w-36 h-12 mt-5 text-5xl not-italic font-semibold dark:text-[#AEBCCF]">{language === "türkçe" ? "Hakkında" : "Profile"}</h2>
             <div className="flex flex-row justify-start text-left ml-32 ">
 
 
@@ -43,7 +43,7 @@ export default function Profile() {
                 </div>
 
 
-                <div className="flex flex-col mt-10 ml-36">
+                <div className="flex flex-col mt-10 ml-60">
                     <h3 className="text-[#4338CA] text-3xl  dark:text-[#BAB2E7]">{language === "türkçe" ? "Hakkında" : "About Me"}</h3>
                     <div>
                         <p className="mt-5 w-[558px] h-36 text-lg text-[#6B7280] dark:text-[#FFFFFF]" id={mode}>{language === "türkçe" ? profileAboutMeTr.about : profileAboutMe.about}</p>

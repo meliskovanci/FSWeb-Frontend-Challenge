@@ -14,7 +14,7 @@ export default function PersonalComponent(props) {
 
     return (
 
-        <section id="skills" ref={props.scrollToRefSkill} className="w-11/12 h-[250px] mt-36 ">
+        <section id="skills" ref={props.scrollToRefSkill} className="w-11/12 h-80 mt-36 ">
             <div className="">
                 <div id={mode} className="ml-32 mt-8 text-5xl not-italic font-semibold w-1/3 dark:text-[#AEBCCF]">
 
